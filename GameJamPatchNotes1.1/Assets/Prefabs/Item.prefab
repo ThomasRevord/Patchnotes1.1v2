@@ -108,6 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemName: 
   icon: {fileID: 0}
+  interactable: {fileID: 0}
 --- !u!54 &233624032553603354
 Rigidbody:
   m_ObjectHideFlags: 0

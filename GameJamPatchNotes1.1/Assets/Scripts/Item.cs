@@ -1,21 +1,28 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Item : MonoBehaviour
 {
     //variables
     public string itemName;
     public Sprite icon;
+    public GameObject interactable;
+
+    private void Start()
+    {
+        
+    }
     public string GetItem()
     {
         return itemName;
     }
     //methods to show wheter or not Item is interactable
-    public void showChild()
-    { 
-    
+    public void showImage()
+    {
+        interactable.SetActive(true);
     }
-    public void hideChild()
-    { 
-    
+    public void hideImage()
+    {
+        interactable.SetActive(false);
     }
 }

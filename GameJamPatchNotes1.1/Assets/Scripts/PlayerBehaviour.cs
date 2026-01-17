@@ -58,12 +58,14 @@ public class PlayerBehaviour : MonoBehaviour
                 //add to inventory
                 items.Add(stored.GetItem());
             }
+            stored.showImage();
             
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
+        stored.hideImage();
         stored = null;
     }
 }
