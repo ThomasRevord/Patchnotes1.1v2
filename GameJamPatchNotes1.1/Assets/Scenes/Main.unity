@@ -387,7 +387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5188df3c48859014596092f9225e0a4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MangerBehaviour
-  Countdown: 10
+  Countdown: 300
   timeText: {fileID: 2140208250}
   mainValue: 0
 --- !u!4 &376353453
@@ -581,6 +581,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1328676337
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6064339265925061855, guid: 1b55e43f99d62bd4bbb12066055b161e, type: 3}
+      propertyPath: m_Name
+      value: Item
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964011560588998095, guid: 1b55e43f99d62bd4bbb12066055b161e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964011560588998095, guid: 1b55e43f99d62bd4bbb12066055b161e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964011560588998095, guid: 1b55e43f99d62bd4bbb12066055b161e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964011560588998095, guid: 1b55e43f99d62bd4bbb12066055b161e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964011560588998095, guid: 1b55e43f99d62bd4bbb12066055b161e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964011560588998095, guid: 1b55e43f99d62bd4bbb12066055b161e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964011560588998095, guid: 1b55e43f99d62bd4bbb12066055b161e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964011560588998095, guid: 1b55e43f99d62bd4bbb12066055b161e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964011560588998095, guid: 1b55e43f99d62bd4bbb12066055b161e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964011560588998095, guid: 1b55e43f99d62bd4bbb12066055b161e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1b55e43f99d62bd4bbb12066055b161e, type: 3}
 --- !u!1 &1502782326
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,6 +731,7 @@ GameObject:
   - component: {fileID: 1659529662}
   - component: {fileID: 1659529666}
   - component: {fileID: 1659529667}
+  - component: {fileID: 1659529668}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -791,6 +849,7 @@ MonoBehaviour:
   rigid: {fileID: 1659529667}
   rotation: {x: 0, y: -10, z: 0}
   rotateSpeed: 3
+  items: []
 --- !u!54 &1659529667
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -818,6 +877,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &1659529668
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659529661}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1794113928
 GameObject:
   m_ObjectHideFlags: 0
@@ -1080,3 +1160,4 @@ SceneRoots:
   - {fileID: 376353453}
   - {fileID: 114895806}
   - {fileID: 1502782329}
+  - {fileID: 1328676337}
