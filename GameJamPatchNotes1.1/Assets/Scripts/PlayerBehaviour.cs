@@ -25,12 +25,12 @@ public class PlayerBehaviour : MonoBehaviour
         {
             transform.Translate(Vector3.back * Time.deltaTime * speed);
         }
+       //rotation (using old input system)
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Rotate(rotation * rotateSpeed * Time.deltaTime);
         }
-
-        if (Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey(KeyCode.RightArrow))
         {
             transform.Rotate(rotation * rotateSpeed * Time.deltaTime * -1);
         }
