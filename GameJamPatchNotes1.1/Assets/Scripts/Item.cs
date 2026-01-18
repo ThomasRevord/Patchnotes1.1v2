@@ -14,7 +14,7 @@ public class Item : MonoBehaviour
     }
     public string GetItem()
     {
-        return itemName;
+        return itemName;      
     }
     //methods to show wheter or not Item is interactable
     public void showImage()
@@ -24,5 +24,20 @@ public class Item : MonoBehaviour
     public void hideImage()
     {
         interactable.SetActive(false);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        showImage();
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        hideImage();
+    }
+
+    public void DestroyItem()
+    {
+        Destroy(gameObject);
     }
 }

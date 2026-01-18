@@ -12,6 +12,7 @@ public class PlayerBehaviour : MonoBehaviour
     //inventory system
     public List<string> items;
     public Item stored = null;
+    public GameObject gate;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -43,29 +44,82 @@ public class PlayerBehaviour : MonoBehaviour
         {
             //add to inventory
             items.Add(stored.GetItem());
+            stored.hideImage();
+            stored.DestroyItem();
+            //clear stored
+            stored = null;
         }
+        else if (Input.GetKeyDown(KeyCode.E) && gate != null)
+        {
+            Debug.Log("GateE");
+            //check if player has key
+            bool hasItem = gate.GetComponent<GateBehaviour>().CheckKey(items);
+            Debug.Log(hasItem);
+            //if they do
+            if (hasItem == true)
+            {
+                //remove key and destroy gate
+                items.Remove(gate.GetComponent<GateBehaviour>().key);                
+                gate.GetComponent<GateBehaviour>().DestroyGate();
+                gate = null;
+            }
+        }
+
     }
     //when hitting a trigger
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("HIT");
+        
         //and trigger is an item
         if (other.gameObject.tag.Equals("Item"))
         {
             stored = other.gameObject.GetComponent<Item>();
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                //add to inventory
-                items.Add(stored.GetItem());
-            }
-            stored.showImage();
             
+            
+        }
+        else if (other.gameObject.tag.Equals("Gate"))
+        { 
+            gate = other.gameObject;
+            
+
+        }
+    }
+    //on exit, no stored item
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag.Equals("Item"))
+        {
+            
+            stored = null;
+        }
+        else if (other.gameObject.tag.Equals("Gate"))
+        {
+            
+            gate = null;
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        stored.hideImage();
-        stored = null;
+        /*
+        if (other.gameObject.tag.Equals("Gate"))
+        {
+            
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Debug.Log("GateE");
+                //check if player has key
+                bool hasItem = gate.GetComponent<GateBehaviour>().CheckKey(items);
+                Debug.Log(hasItem);
+                //if they do
+                if (hasItem == true)
+                {
+                    //remove key and destroy gate
+                    items.Remove(gate.GetComponent<GateBehaviour>().key);
+                    Destroy(other);
+                }
+            }
+
+        }*/
     }
 }
