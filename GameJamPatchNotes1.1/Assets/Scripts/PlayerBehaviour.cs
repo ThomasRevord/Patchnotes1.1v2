@@ -23,20 +23,20 @@ public class PlayerBehaviour : MonoBehaviour
     void Update()
     {
         //movement (using old input system)
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
         {
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
         }
-        else if (Input.GetKey(KeyCode.DownArrow))
+        else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
             transform.Translate(Vector3.back * Time.deltaTime * speed);
         }
        //rotation (using old input system)
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             transform.Rotate(rotation * rotateSpeed * Time.deltaTime);
         }
-        else if (Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             transform.Rotate(rotation * rotateSpeed * Time.deltaTime * -1);
         }
