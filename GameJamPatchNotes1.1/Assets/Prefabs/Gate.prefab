@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4326943777560825502}
   - component: {fileID: 8384205782925357573}
   - component: {fileID: -1921259140961581143}
+  - component: {fileID: 2916757442305188255}
   m_Layer: 0
   m_Name: Gate
   m_TagString: Gate
@@ -107,7 +108,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -127,3 +128,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GateBehaviour
   key: 
   interactable: {fileID: 0}
+--- !u!65 &2916757442305188255
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8758476184491757155}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
