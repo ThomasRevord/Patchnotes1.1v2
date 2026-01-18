@@ -463,7 +463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5188df3c48859014596092f9225e0a4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MangerBehaviour
-  Countdown: 300
+  Countdown: 301
   timeText: {fileID: 2140208250}
   mainValue: 0
 --- !u!4 &376353453
