@@ -16,7 +16,27 @@ public class PlayerBehaviour : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        //check passwords
+        if (PlayerPrefs.GetInt("Code") >= 4)
+        {
+            items.Add("Code");
+        }
+        if (PlayerPrefs.GetInt("Pass1") == 1)
+        {
+            items.Add("Pass1");
+        }
+        if (PlayerPrefs.GetInt("Pass2") == 1)
+        {
+            items.Add("Pass2");
+        }
+        if (PlayerPrefs.GetInt("Pass3") == 1)
+        {
+            items.Add("Pass3");
+        }
+        if (PlayerPrefs.GetInt("Pass4") == 1)
+        {
+            items.Add("Pass4");
+        }
     }
 
     // Update is called once per frame
@@ -43,7 +63,11 @@ public class PlayerBehaviour : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && stored != null)
         {
             //add to inventory
-            items.Add(stored.GetItem());
+            //if it isn't in inventory already, add it
+            if (!items.Contains(stored.GetItem()))
+            { 
+                items.Add(stored.GetItem()); 
+            }
             stored.hideImage();
             stored.DestroyItem();
             //clear stored
@@ -62,6 +86,14 @@ public class PlayerBehaviour : MonoBehaviour
                 items.Remove(gate.GetComponent<GateBehaviour>().key);                
                 gate.GetComponent<GateBehaviour>().DestroyGate();
                 gate = null;
+            }
+        }
+        //Debug Log for test DELETE ON BUILD
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            foreach (string i in items)
+            {
+                Debug.Log("item:" + i);
             }
         }
 
