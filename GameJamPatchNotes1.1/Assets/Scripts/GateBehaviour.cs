@@ -6,11 +6,12 @@ public class GateBehaviour : MonoBehaviour
 {
     public string key;
     public GameObject interactable;
+    public GameObject icon;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        interactable.SetActive(false);
     }
 
     // Update is called once per frame
@@ -51,6 +52,8 @@ public class GateBehaviour : MonoBehaviour
     }
     public void DestroyGate()
     {
+        icon.SetActive(false);
+        interactable.SetActive(false);
         Destroy(gameObject);
     }
 }

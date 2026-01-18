@@ -5,15 +5,16 @@ public class Item : MonoBehaviour
 {
     //variables
     public string itemName;
-    public Sprite icon;
+    public GameObject icon;
     public GameObject interactable;
 
     private void Start()
     {
-        
+        interactable.SetActive(false);
     }
     public string GetItem()
     {
+        icon.SetActive(true);
         return itemName;      
     }
     //methods to show wheter or not Item is interactable
@@ -40,4 +41,6 @@ public class Item : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+
 }
