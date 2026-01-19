@@ -8,17 +8,21 @@ public class NoteBehaviour : MonoBehaviour
     public TextMeshProUGUI noteTextObject;
     public GameObject paper;
     public GameObject interactable;
+    public bool touchingPlayer;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        touchingPlayer = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.E) && touchingPlayer == true)
+        {
+            showNote();
+        }
     }
 
     //methods to show wheter or not Item is interactable
@@ -34,10 +38,26 @@ public class NoteBehaviour : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         showImage();
+        touchingPlayer = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
         hideImage();
+        touchingPlayer = false;
+        hideNote();
+    }
+
+    public void showNote()
+    {
+        paper.SetActive(true);
+        
+        noteTextObject.text = noteText;
+    }
+
+    public void hideNote()
+    {
+        paper.SetActive(false);
+        noteTextObject.text = "";
     }
 }
