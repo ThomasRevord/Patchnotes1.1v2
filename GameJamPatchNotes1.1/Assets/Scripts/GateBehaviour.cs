@@ -7,6 +7,12 @@ public class GateBehaviour : MonoBehaviour
     public string key;
     public GameObject interactable;
     public GameObject icon;
+    //dealing with passwords
+    public bool codeReward;
+    public string prefToChange;
+    public GameObject touchingPlayer;
+    //TODO: add failsafe so player can't increment code with same object
+    //can probably use player prefs for that with each gate
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,6 +31,10 @@ public class GateBehaviour : MonoBehaviour
         Debug.Log(items);
         if (items.Contains(key))
         {
+            if (codeReward)
+            {
+                GetPass();
+            }
             return true;
         }
         else 
@@ -44,16 +54,29 @@ public class GateBehaviour : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         showImage();
+        touchingPlayer = other.gameObject;
     }
 
     private void OnTriggerExit(Collider other)
     {
         hideImage();
+        touchingPlayer = null;
     }
     public void DestroyGate()
     {
         icon.SetActive(false);
         interactable.SetActive(false);
         Destroy(gameObject);
+    }
+
+    public void GetPass()
+    {
+        Debug.Log("GetPass called");
+        //increment code by 1
+        PlayerPrefs.SetInt(prefToChange, PlayerPrefs.GetInt(prefToChange) + 1);
+        if (PlayerPrefs.GetInt(prefToChange) >= 4)
+        {
+            touchingPlayer.GetComponent<PlayerBehaviour>().items.Add(prefToChange);
+        }
     }
 }

@@ -7,6 +7,8 @@ public class Item : MonoBehaviour
     public string itemName;
     public GameObject icon;
     public GameObject interactable;
+    //give passwords
+    public bool passItem;
 
     private void Start()
     {
@@ -14,7 +16,14 @@ public class Item : MonoBehaviour
     }
     public string GetItem()
     {
-        icon.SetActive(true);
+        if (!passItem)
+        {
+            icon.SetActive(true);
+        }
+        else 
+        {
+            PlayerPrefs.SetInt(itemName, 1);
+        }
         return itemName;      
     }
     //methods to show wheter or not Item is interactable

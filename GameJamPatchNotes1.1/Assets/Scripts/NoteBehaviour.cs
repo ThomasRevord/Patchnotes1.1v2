@@ -51,7 +51,7 @@ public class NoteBehaviour : MonoBehaviour
     public void showNote()
     {
         paper.SetActive(true);
-        
+        interactable.SetActive(false);
         noteTextObject.text = noteText;
     }
 
