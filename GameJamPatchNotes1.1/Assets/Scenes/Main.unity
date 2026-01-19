@@ -852,7 +852,7 @@ PrefabInstance:
       objectReference: {fileID: 1462308223}
     - target: {fileID: -684183849679598674, guid: 1b55e43f99d62bd4bbb12066055b161e, type: 3}
       propertyPath: itemName
-      value: test
+      value: Key3
       objectReference: {fileID: 0}
     - target: {fileID: -684183849679598674, guid: 1b55e43f99d62bd4bbb12066055b161e, type: 3}
       propertyPath: interactable
@@ -882,6 +882,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -0.1842954
       objectReference: {fileID: 0}
+    - target: {fileID: 3052179467123157245, guid: 1b55e43f99d62bd4bbb12066055b161e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1555652688, guid: 199e85765c2170f4eb446d905623609d, type: 3}
     - target: {fileID: 6064339265925061855, guid: 1b55e43f99d62bd4bbb12066055b161e, type: 3}
       propertyPath: m_Name
       value: Item (2)
@@ -2201,7 +2205,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -1921259140961581143, guid: 34f4199e09bc8eb43a4c99225bac09f3, type: 3}
       propertyPath: key
-      value: test
+      value: Key2
       objectReference: {fileID: 0}
     - target: {fileID: -1921259140961581143, guid: 34f4199e09bc8eb43a4c99225bac09f3, type: 3}
       propertyPath: icon
@@ -2318,7 +2322,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -1921259140961581143, guid: 34f4199e09bc8eb43a4c99225bac09f3, type: 3}
       propertyPath: key
-      value: test
+      value: Key3
       objectReference: {fileID: 0}
     - target: {fileID: -1921259140961581143, guid: 34f4199e09bc8eb43a4c99225bac09f3, type: 3}
       propertyPath: icon
@@ -3085,7 +3089,7 @@ PrefabInstance:
       objectReference: {fileID: 79797234}
     - target: {fileID: -684183849679598674, guid: 1b55e43f99d62bd4bbb12066055b161e, type: 3}
       propertyPath: itemName
-      value: test
+      value: Key1
       objectReference: {fileID: 0}
     - target: {fileID: -684183849679598674, guid: 1b55e43f99d62bd4bbb12066055b161e, type: 3}
       propertyPath: interactable
@@ -3115,6 +3119,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -0.1842954
       objectReference: {fileID: 0}
+    - target: {fileID: 3052179467123157245, guid: 1b55e43f99d62bd4bbb12066055b161e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 458259595, guid: 199e85765c2170f4eb446d905623609d, type: 3}
     - target: {fileID: 6064339265925061855, guid: 1b55e43f99d62bd4bbb12066055b161e, type: 3}
       propertyPath: m_Name
       value: Item
@@ -3178,7 +3186,7 @@ PrefabInstance:
       objectReference: {fileID: 690869153}
     - target: {fileID: -684183849679598674, guid: 1b55e43f99d62bd4bbb12066055b161e, type: 3}
       propertyPath: itemName
-      value: test
+      value: Key2
       objectReference: {fileID: 0}
     - target: {fileID: -684183849679598674, guid: 1b55e43f99d62bd4bbb12066055b161e, type: 3}
       propertyPath: interactable
@@ -3208,6 +3216,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -0.1842954
       objectReference: {fileID: 0}
+    - target: {fileID: 3052179467123157245, guid: 1b55e43f99d62bd4bbb12066055b161e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1871661324, guid: 199e85765c2170f4eb446d905623609d, type: 3}
     - target: {fileID: 6064339265925061855, guid: 1b55e43f99d62bd4bbb12066055b161e, type: 3}
       propertyPath: m_Name
       value: Item (1)
@@ -3493,7 +3505,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -1921259140961581143, guid: 34f4199e09bc8eb43a4c99225bac09f3, type: 3}
       propertyPath: key
-      value: test
+      value: Key1
       objectReference: {fileID: 0}
     - target: {fileID: -1921259140961581143, guid: 34f4199e09bc8eb43a4c99225bac09f3, type: 3}
       propertyPath: icon
