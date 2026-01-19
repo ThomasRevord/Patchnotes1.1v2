@@ -60,6 +60,7 @@ public class PlayerBehaviour : MonoBehaviour
         {
             transform.Rotate(rotation * rotateSpeed * Time.deltaTime * -1);
         }
+        //when player presses E key
         if (Input.GetKeyDown(KeyCode.E) && stored != null)
         {
             //add to inventory
@@ -133,25 +134,6 @@ public class PlayerBehaviour : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        /*
-        if (other.gameObject.tag.Equals("Gate"))
-        {
-            
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                Debug.Log("GateE");
-                //check if player has key
-                bool hasItem = gate.GetComponent<GateBehaviour>().CheckKey(items);
-                Debug.Log(hasItem);
-                //if they do
-                if (hasItem == true)
-                {
-                    //remove key and destroy gate
-                    items.Remove(gate.GetComponent<GateBehaviour>().key);
-                    Destroy(other);
-                }
-            }
-
-        }*/
+        
     }
 }
