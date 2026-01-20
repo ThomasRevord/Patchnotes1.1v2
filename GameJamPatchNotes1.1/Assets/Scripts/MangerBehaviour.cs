@@ -1,11 +1,14 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System.Collections;
 public class MangerBehaviour : MonoBehaviour
 {
     //variables
     public float Countdown;
     public TextMeshProUGUI timeText;
+    public float delaytime;
+    public GameObject lightningAnimation;
     //value of scene in build index CHANGE WHEN BUILDING GAME TO MAKE IT UP TO DATE
     public int mainValue;
     public bool journalOpen;
@@ -77,8 +80,8 @@ public class MangerBehaviour : MonoBehaviour
         else 
         {
             Countdown = 0;
-            SceneManager.LoadScene(mainValue);
-            PlayerPrefs.SetInt("Loop", PlayerPrefs.GetInt("Loop") + 1);
+            StartCoroutine(NewLoop());
+          
         }
         int minutes = Mathf.FloorToInt(Countdown / 60);
         int seconds = Mathf.FloorToInt(Countdown % 60);
@@ -194,6 +197,14 @@ public class MangerBehaviour : MonoBehaviour
     public void CloseNote()
     {
 
+    }
+
+    IEnumerator NewLoop()
+    {
+        lightningAnimation.SetActive(true);
+        yield return new WaitForSeconds(delaytime);
+        SceneManager.LoadScene(mainValue);
+        PlayerPrefs.SetInt("Loop", PlayerPrefs.GetInt("Loop") + 1);
     }
 
 }
