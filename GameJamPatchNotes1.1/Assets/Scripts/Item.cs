@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class Item : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class Item : MonoBehaviour
     public GameObject interactable;
     //give passwords
     public bool passItem;
+    public float delayTime;
+    public GameObject getText;
 
     private void Start()
     {
@@ -23,6 +26,7 @@ public class Item : MonoBehaviour
         else 
         {
             PlayerPrefs.SetInt(itemName, 1);
+            getText.SetActive(true);
         }
         return itemName;      
     }
@@ -48,8 +52,13 @@ public class Item : MonoBehaviour
 
     public void DestroyItem()
     {
-        Destroy(gameObject);
+        if(!passItem)Destroy(gameObject);
     }
 
-
+    IEnumerator ShowGetText()
+    {
+        getText.SetActive(true);
+        yield return new WaitForSeconds(delayTime);
+        getText.SetActive(false);
+    }
 }

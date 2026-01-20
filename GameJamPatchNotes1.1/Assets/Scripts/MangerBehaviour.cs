@@ -26,7 +26,8 @@ public class MangerBehaviour : MonoBehaviour
     public TextMeshProUGUI code3Text;
     public TextMeshProUGUI code4Text;
     public int pass3Value;
-
+    public GameObject tutorialText;
+    public GameObject getText;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -87,6 +88,12 @@ public class MangerBehaviour : MonoBehaviour
         {
             PlayerPrefs.SetInt("Pass3", 1);
         }
+        //handle tutorial text
+        if (PlayerPrefs.GetInt("Loop") >= 1)
+        {
+            tutorialText.SetActive(false);
+        }
+        
     }
 
     // Update is called once per frame
@@ -167,7 +174,7 @@ public class MangerBehaviour : MonoBehaviour
                     code4Text.gameObject.SetActive(true);
                 }
             }
-           
+            getText.SetActive(false);
 
         }
 
