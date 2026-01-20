@@ -682,7 +682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5188df3c48859014596092f9225e0a4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MangerBehaviour
-  Countdown: 5
+  Countdown: 10
   timeText: {fileID: 2140208250}
   delaytime: 0.6
   lightningAnimation: {fileID: 510842166}
@@ -698,6 +698,7 @@ MonoBehaviour:
   code2Text: {fileID: 1195477076}
   code3Text: {fileID: 1283852613}
   code4Text: {fileID: 1193559870}
+  pass3Value: 2
 --- !u!4 &376353453
 Transform:
   m_ObjectHideFlags: 0

@@ -17,9 +17,21 @@ public class PlayerBehaviour : MonoBehaviour
     void Start()
     {
         //check passwords
-        if (PlayerPrefs.GetInt("Code") >= 4)
+        if (PlayerPrefs.GetInt("Code1") == 1)
         {
-            items.Add("Code");
+            items.Add("Code1");
+        }
+        if (PlayerPrefs.GetInt("Code2") == 1)
+        {
+            items.Add("Code2");
+        }
+        if (PlayerPrefs.GetInt("Code3") == 1)
+        {
+            items.Add("Code3");
+        }
+        if (PlayerPrefs.GetInt("Code4") == 1)
+        {
+            items.Add("Code4");
         }
         if (PlayerPrefs.GetInt("Pass1") == 1)
         {
