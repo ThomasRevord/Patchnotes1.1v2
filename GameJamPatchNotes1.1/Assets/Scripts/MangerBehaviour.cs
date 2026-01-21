@@ -1,11 +1,14 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System.Collections;
 public class MangerBehaviour : MonoBehaviour
 {
     //variables
     public float Countdown;
     public TextMeshProUGUI timeText;
+    public float delaytime;
+    public GameObject lightningAnimation;
     //value of scene in build index CHANGE WHEN BUILDING GAME TO MAKE IT UP TO DATE
     public int mainValue;
     public bool journalOpen;
@@ -22,7 +25,9 @@ public class MangerBehaviour : MonoBehaviour
     public TextMeshProUGUI code2Text;
     public TextMeshProUGUI code3Text;
     public TextMeshProUGUI code4Text;
-
+    public int pass3Value;
+    public GameObject tutorialText;
+    public GameObject getText;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -56,15 +61,37 @@ public class MangerBehaviour : MonoBehaviour
         {
             PlayerPrefs.SetInt("Pass4", 0);
         }
-        //Main code. will increment over time
-        if (!PlayerPrefs.HasKey("Code"))
+        //Main code prefs
+        if (!PlayerPrefs.HasKey("Code1"))
         {
-            PlayerPrefs.SetInt("Code", 0);
+            PlayerPrefs.SetInt("Code1", 0);
+        }
+        if (!PlayerPrefs.HasKey("Code2"))
+        {
+            PlayerPrefs.SetInt("Code2", 0);
+        }
+        if (!PlayerPrefs.HasKey("Code3"))
+        {
+            PlayerPrefs.SetInt("Code3", 0);
+        }
+        if (!PlayerPrefs.HasKey("Code4"))
+        {
+            PlayerPrefs.SetInt("Code4", 0);
         }
         //number of loops
         if (!PlayerPrefs.HasKey("Loop"))
         {
             PlayerPrefs.SetInt("Loop", 0);
+        }
+        //handle password3
+        if (PlayerPrefs.GetInt("Loop") >= pass3Value)
+        {
+            PlayerPrefs.SetInt("Pass3", 1);
+        }
+        //handle tutorial text
+        if (PlayerPrefs.GetInt("Loop") >= 1)
+        {
+            tutorialText.SetActive(false);
         }
         
     }
@@ -77,8 +104,8 @@ public class MangerBehaviour : MonoBehaviour
         else 
         {
             Countdown = 0;
-            SceneManager.LoadScene(mainValue);
-            PlayerPrefs.SetInt("Loop", PlayerPrefs.GetInt("Loop") + 1);
+            StartCoroutine(NewLoop());
+          
         }
         int minutes = Mathf.FloorToInt(Countdown / 60);
         int seconds = Mathf.FloorToInt(Countdown % 60);
@@ -126,27 +153,28 @@ public class MangerBehaviour : MonoBehaviour
                 {
                     pass4Text.gameObject.SetActive(true);
                 }
-                if (PlayerPrefs.GetInt("Code") >= 1)
+                if (PlayerPrefs.GetInt("Code1") == 1)
                 {
                     
                     code1Text.gameObject.SetActive(true);
                 }
-                if (PlayerPrefs.GetInt("Code") >= 2)
+                if (PlayerPrefs.GetInt("Code2") == 1)
                 {
                   
                     code2Text.gameObject.SetActive(true);
                 }
-                if (PlayerPrefs.GetInt("Code") >= 3)
+                if (PlayerPrefs.GetInt("Code3") == 1)
                 {
                     
                     code3Text.gameObject.SetActive(true);
                 }
-                if (PlayerPrefs.GetInt("Code") >= 4)
+                if (PlayerPrefs.GetInt("Code4") == 1)
                 {
                     
                     code4Text.gameObject.SetActive(true);
                 }
             }
+            getText.SetActive(false);
 
         }
 
@@ -162,7 +190,10 @@ public class MangerBehaviour : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {
-            PlayerPrefs.SetInt("Code",0);
+            PlayerPrefs.SetInt("Code1",0);
+            PlayerPrefs.SetInt("Code2", 0);
+            PlayerPrefs.SetInt("Code3", 0);
+            PlayerPrefs.SetInt("Code4", 0);
             PlayerPrefs.SetInt("Pass1", 0);
             PlayerPrefs.SetInt("Pass2", 0);
             PlayerPrefs.SetInt("Pass3", 0);
@@ -174,11 +205,17 @@ public class MangerBehaviour : MonoBehaviour
         {
             PlayerPrefs.SetInt("Pass1", 1);
             PlayerPrefs.SetInt("Pass2", 1);
+            PlayerPrefs.SetInt("Code1", 1);
+            PlayerPrefs.SetInt("Code2", 1);
         }
         if (Input.GetKeyDown(KeyCode.K))
         {
-            PlayerPrefs.SetInt("Pass3", 1);
-            PlayerPrefs.SetInt("Pass4", 1);
+            PlayerPrefs.SetInt("Code3", 1);
+            PlayerPrefs.SetInt("Code4", 1);
+        }
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            Debug.Log("Loop" + PlayerPrefs.GetInt("Loop"));
         }
 
 
@@ -196,4 +233,13 @@ public class MangerBehaviour : MonoBehaviour
 
     }
 
+    IEnumerator NewLoop()
+    {
+        lightningAnimation.SetActive(true);
+        yield return new WaitForSeconds(delaytime);
+        SceneManager.LoadScene(mainValue);
+        PlayerPrefs.SetInt("Loop", PlayerPrefs.GetInt("Loop") + 1);
+    }
+
+   
 }
