@@ -13,9 +13,15 @@ public class PlayerBehaviour : MonoBehaviour
     public List<string> items;
     public Item stored = null;
     public GameObject gate;
+    public AudioSource aSource;
+    public AudioClip walkSound;
+    public float walkDelayTime;
+    public bool playingSound;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        playingSound = false;
         //check passwords
         if (PlayerPrefs.GetInt("Code1") == 1)
         {
@@ -58,10 +64,18 @@ public class PlayerBehaviour : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
         {
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
+            if(!playingSound)StartCoroutine(PlayWalk());
         }
-        else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
             transform.Translate(Vector3.back * Time.deltaTime * speed);
+            if (!playingSound) StartCoroutine(PlayWalk());
+        }
+        //disable coroutine when keys are lifted
+        if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.S))
+        {
+            StopCoroutine(PlayWalk());
+            aSource.Stop();
         }
        //rotation (using old input system)
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
@@ -88,10 +102,10 @@ public class PlayerBehaviour : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.E) && gate != null)
         {
-            Debug.Log("GateE");
+
             //check if player has key
             bool hasItem = gate.GetComponent<GateBehaviour>().CheckKey(items);
-            Debug.Log(hasItem);
+            
             //if they do
             if (hasItem == true)
             {
@@ -147,5 +161,14 @@ public class PlayerBehaviour : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         
+    }
+
+    IEnumerator PlayWalk()
+    {
+        playingSound = true;
+        Debug.Log("PlayWalk Called");
+        aSource.PlayOneShot(walkSound);
+        yield return new WaitForSeconds(walkDelayTime);
+        playingSound = false;
     }
 }
