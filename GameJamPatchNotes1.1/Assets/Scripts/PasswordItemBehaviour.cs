@@ -5,6 +5,7 @@ public class PasswordItemBehaviour : MonoBehaviour
     public string prefToChange;
     public GameObject interactable;
     public GameObject touchingPlayer;
+    
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
