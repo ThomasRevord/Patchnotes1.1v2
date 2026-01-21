@@ -17,6 +17,7 @@ public class PlayerBehaviour : MonoBehaviour
     public AudioClip walkSound;
     public float walkDelayTime;
     public bool playingSound;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -65,13 +66,13 @@ public class PlayerBehaviour : MonoBehaviour
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
             if(!playingSound)StartCoroutine(PlayWalk());
         }
-        else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
             transform.Translate(Vector3.back * Time.deltaTime * speed);
             if (!playingSound) StartCoroutine(PlayWalk());
         }
         //disable coroutine when keys are lifted
-        if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+        if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.S))
         {
             StopCoroutine(PlayWalk());
             aSource.Stop();
