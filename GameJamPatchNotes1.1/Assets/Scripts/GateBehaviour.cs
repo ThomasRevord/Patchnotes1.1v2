@@ -11,6 +11,8 @@ public class GateBehaviour : MonoBehaviour
     public bool codeReward;
     public string prefToChange;
     public GameObject touchingPlayer;
+    public AudioSource aSource;
+    public AudioClip openSound;
     //TODO: add failsafe so player can't increment code with same object
     //can probably use player prefs for that with each gate
 
@@ -66,7 +68,12 @@ public class GateBehaviour : MonoBehaviour
     {
         icon.SetActive(false);
         interactable.SetActive(false);
-        if(!codeReward)Destroy(gameObject);
+        if (!codeReward)
+        {
+            Destroy(gameObject);
+            Debug.Log("Sound should play");
+            aSource.PlayOneShot(openSound);
+        }
     }
 
     public void GetPass()
