@@ -33,6 +33,7 @@ public class MangerBehaviour : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        //made UI invisible
         journalOpen = false;
         pass1Text.gameObject.SetActive(false);
         pass2Text.gameObject.SetActive(false);

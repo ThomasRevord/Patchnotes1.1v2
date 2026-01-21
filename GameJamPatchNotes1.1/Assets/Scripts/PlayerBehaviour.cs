@@ -88,10 +88,10 @@ public class PlayerBehaviour : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.E) && gate != null)
         {
-            Debug.Log("GateE");
+
             //check if player has key
             bool hasItem = gate.GetComponent<GateBehaviour>().CheckKey(items);
-            Debug.Log(hasItem);
+            
             //if they do
             if (hasItem == true)
             {
