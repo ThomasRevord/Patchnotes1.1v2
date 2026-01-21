@@ -66,7 +66,7 @@ public class GateBehaviour : MonoBehaviour
     {
         icon.SetActive(false);
         interactable.SetActive(false);
-        Destroy(gameObject);
+        if(!codeReward)Destroy(gameObject);
     }
 
     public void GetPass()
