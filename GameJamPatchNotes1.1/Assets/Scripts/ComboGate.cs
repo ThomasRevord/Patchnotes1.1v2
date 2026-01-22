@@ -3,10 +3,11 @@ using UnityEngine;
 public class ComboGate : MonoBehaviour
 {
     public GameObject interactable;
-    public bool touchingPlayer;
+    public GameObject touchingPlayer;
     public GameObject lock1;
     public GameObject lock2;
     public GameObject lock3;
+    public AudioClip openSound;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,7 +18,7 @@ public class ComboGate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && touchingPlayer == true)
+        if (Input.GetKeyDown(KeyCode.E) && touchingPlayer != null)
         {
             CheckLocks();
         }
@@ -35,13 +36,13 @@ public class ComboGate : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         showImage();
-        touchingPlayer = true;
+        touchingPlayer = other.gameObject;
     }
 
     private void OnTriggerExit(Collider other)
     {
         hideImage();
-        touchingPlayer = false;
+        touchingPlayer = null;
         
     }
 
@@ -49,6 +50,7 @@ public class ComboGate : MonoBehaviour
     {
         if (lock1.GetComponent<LockBehaviour>().CheckLock() == true && lock2.GetComponent<LockBehaviour>().CheckLock() == true && lock3.GetComponent<LockBehaviour>().CheckLock() == true)
         {
+            touchingPlayer.GetComponent<AudioSource>().PlayOneShot(openSound);
             interactable.SetActive(false);
             Destroy(gameObject);
         }

@@ -2536,10 +2536,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ComboGate
   interactable: {fileID: 140917847}
-  touchingPlayer: 0
+  touchingPlayer: {fileID: 0}
   lock1: {fileID: 1142301764}
   lock2: {fileID: 1570688954}
   lock3: {fileID: 1777197026}
+  openSound: {fileID: 8300000, guid: fd4972e5bd600874092e43b07832c621, type: 3}
 --- !u!65 &1308052186
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2627,7 +2628,7 @@ Transform:
   m_GameObject: {fileID: 1308052184}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.35, y: 0.62, z: -3.24}
+  m_LocalPosition: {x: -6, y: 0.62, z: -6.57}
   m_LocalScale: {x: 0.48031, y: 1.2703418, z: 1.768}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2954,7 +2955,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8278656946364044716, guid: 590870797fc844541a767f5d33cab554, type: 3}
       propertyPath: correctNum
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8278656946364044716, guid: 590870797fc844541a767f5d33cab554, type: 3}
       propertyPath: interactable
@@ -2990,7 +2991,7 @@ PrefabInstance:
       objectReference: {fileID: 451917314, guid: 07627c6243feeb441ac4c46b3c2744c8, type: 3}
     - target: {fileID: 8298986601458008089, guid: 590870797fc844541a767f5d33cab554, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.7809997
+      value: -2.82
       objectReference: {fileID: 0}
     - target: {fileID: 8298986601458008089, guid: 590870797fc844541a767f5d33cab554, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3475,7 +3476,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1
+  m_Radius: 0.8
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &1659529669
 AudioSource:
@@ -3772,7 +3773,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8278656946364044716, guid: 590870797fc844541a767f5d33cab554, type: 3}
       propertyPath: correctNum
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8278656946364044716, guid: 590870797fc844541a767f5d33cab554, type: 3}
       propertyPath: interactable
@@ -4807,7 +4808,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8278656946364044716, guid: 590870797fc844541a767f5d33cab554, type: 3}
       propertyPath: correctNum
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8278656946364044716, guid: 590870797fc844541a767f5d33cab554, type: 3}
       propertyPath: interactable

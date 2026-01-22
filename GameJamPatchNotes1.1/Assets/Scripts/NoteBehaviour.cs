@@ -9,6 +9,8 @@ public class NoteBehaviour : MonoBehaviour
     public GameObject paper;
     public GameObject interactable;
     public bool touchingPlayer;
+    public AudioSource aSource;
+    public AudioClip noteSound;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -53,6 +55,7 @@ public class NoteBehaviour : MonoBehaviour
         paper.SetActive(true);
         interactable.SetActive(false);
         noteTextObject.text = noteText;
+        aSource.PlayOneShot(noteSound);
     }
 
     public void hideNote()
