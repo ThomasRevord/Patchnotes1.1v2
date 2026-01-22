@@ -18,7 +18,6 @@ public class LockBehaviour : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
         keySet = false;
     }
 
@@ -36,6 +35,7 @@ public class LockBehaviour : MonoBehaviour
                 icon.SetActive(false);
                 gameObject.GetComponent<SpriteRenderer>().sprite = sprites[1];
                 currentNum = 1;
+                keySet = true;
             }
             //if key is set
             else 
