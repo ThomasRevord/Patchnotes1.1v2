@@ -28,9 +28,6 @@ public class MangerBehaviour : MonoBehaviour
     public int pass3Value;
     public GameObject tutorialText;
     public GameObject getText;
-    public AudioSource aSource;
-    public AudioClip music1;
-    public AudioClip music2;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -97,18 +94,6 @@ public class MangerBehaviour : MonoBehaviour
         {
             tutorialText.SetActive(false);
         }
-        int chooseTrack = Random.Range(0, 2);
-        Debug.Log("Track Played: " + chooseTrack);
-        if (chooseTrack == 0)
-        {
-            aSource.clip = music1;
-        }
-        else if (chooseTrack == 1) 
-        {
-            aSource.clip = music2;
-        }
-        aSource.Play();
-
     }
 
     // Update is called once per frame

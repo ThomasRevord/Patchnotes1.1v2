@@ -704,9 +704,6 @@ MonoBehaviour:
   pass3Value: 2
   tutorialText: {fileID: 1206389217}
   getText: {fileID: 1398152412}
-  aSource: {fileID: 376353454}
-  music1: {fileID: 8300000, guid: 649adbccb379ea64d86c651b5f047103, type: 3}
-  music2: {fileID: 8300000, guid: f7ae776277924d4469b597af9bdac004, type: 3}
 --- !u!4 &376353453
 Transform:
   m_ObjectHideFlags: 0

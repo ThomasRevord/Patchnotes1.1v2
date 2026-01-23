@@ -38,7 +38,7 @@ public class MainMenu : MonoBehaviour
         audioMixer.SetFloat("SoundVolume", volume);
     }
 
-    public void SaveVolumeSettings()
+    public void SaveVolume()
     {
         audioMixer.GetFloat("MusicVolume", out float musicVolume);
         PlayerPrefs.SetFloat("MusicVolume", musicVolume);
