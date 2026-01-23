@@ -69,13 +69,18 @@ public class GateBehaviour : MonoBehaviour
     {
         icon.SetActive(false);
         interactable.SetActive(false);
-        aSource.PlayOneShot(openSound);
+        
         if (!codeReward)
         {
-            touchingPlayer.GetComponent<AudioSource>().PlayOneShot(openSound);
+            SoundManager.PlaySound("Door");
             Destroy(gameObject);
             Debug.Log("Sound should play");
             
+        }
+        else if (codeReward)
+        {
+            SoundManager.PlaySound("Computer");
+
         }
     }
 

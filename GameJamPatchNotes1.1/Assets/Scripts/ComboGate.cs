@@ -50,7 +50,7 @@ public class ComboGate : MonoBehaviour
     {
         if (lock1.GetComponent<LockBehaviour>().CheckLock() == true && lock2.GetComponent<LockBehaviour>().CheckLock() == true && lock3.GetComponent<LockBehaviour>().CheckLock() == true)
         {
-            touchingPlayer.GetComponent<AudioSource>().PlayOneShot(openSound);
+            SoundManager.PlaySound("Door");
             interactable.SetActive(false);
             Destroy(gameObject);
         }

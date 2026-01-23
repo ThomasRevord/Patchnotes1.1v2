@@ -167,7 +167,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         playingSound = true;
         Debug.Log("PlayWalk Called");
-        aSource.PlayOneShot(walkSound);
+        SoundManager.PlaySound("Walk");
         yield return new WaitForSeconds(walkDelayTime);
         playingSound = false;
     }

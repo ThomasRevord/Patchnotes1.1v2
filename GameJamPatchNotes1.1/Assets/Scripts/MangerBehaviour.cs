@@ -94,6 +94,7 @@ public class MangerBehaviour : MonoBehaviour
         {
             tutorialText.SetActive(false);
         }
+       
     }
 
     // Update is called once per frame
