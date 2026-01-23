@@ -134,7 +134,7 @@ MonoBehaviour:
   prefToChange: 
   touchingPlayer: {fileID: 0}
   aSource: {fileID: -7618685602723203767}
-  openSound: {fileID: 8300000, guid: fd4972e5bd600874092e43b07832c621, type: 3}
+  openSound: {fileID: 8300000, guid: 6a18a8ea242b93b4ba78e8249c1f04d6, type: 3}
 --- !u!65 &2916757442305188255
 BoxCollider:
   m_ObjectHideFlags: 0

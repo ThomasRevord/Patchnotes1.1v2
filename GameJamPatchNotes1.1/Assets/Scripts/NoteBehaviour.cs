@@ -55,7 +55,7 @@ public class NoteBehaviour : MonoBehaviour
         paper.SetActive(true);
         interactable.SetActive(false);
         noteTextObject.text = noteText;
-        aSource.PlayOneShot(noteSound);
+        SoundManager.PlaySound("Paper");
     }
 
     public void hideNote()
