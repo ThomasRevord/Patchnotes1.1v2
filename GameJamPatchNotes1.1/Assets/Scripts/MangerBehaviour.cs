@@ -94,7 +94,7 @@ public class MangerBehaviour : MonoBehaviour
         {
             tutorialText.SetActive(false);
         }
-       
+        MusicManager.Instance.PlayMusic("Game");
     }
 
     // Update is called once per frame
