@@ -4,7 +4,7 @@ using UnityEngine;
 [System.Serializable]
 public struct SoundEffect
 {
-    public string groupID;
+    public string name;
     public AudioClip[] clips;
 }
 
@@ -16,7 +16,7 @@ public class SoundLibrary : MonoBehaviour
     {
         foreach (var soundEffects in soundEffects)
         {
-            if (soundEffects.groupID == name)
+            if (soundEffects.name == name)
             {
                 return soundEffects.clips[Random.Range(0, soundEffects.clips.Length)];
             }
