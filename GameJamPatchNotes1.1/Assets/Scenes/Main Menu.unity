@@ -2067,7 +2067,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1699920910}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: UpdateSoundVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &943488063
 GameObject:
   m_ObjectHideFlags: 0
@@ -2566,7 +2578,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1699920910}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: UpdateMusicVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1069440887
 GameObject:
   m_ObjectHideFlags: 0
@@ -3118,6 +3142,8 @@ GameObject:
   - component: {fileID: 1581474648}
   - component: {fileID: 1581474650}
   - component: {fileID: 1581474649}
+  - component: {fileID: 1581474652}
+  - component: {fileID: 1581474651}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -3173,6 +3199,33 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: f7ae776277924d4469b597af9bdac004, type: 3}
   - trackName: Game
     clip: {fileID: 8300000, guid: 649adbccb379ea64d86c651b5f047103, type: 3}
+--- !u!114 &1581474651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581474647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42f73e871a6f2281091182c3c2199b0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundManager
+  soundLibrary: {fileID: 1581474652}
+  soundSource: {fileID: 1944014246}
+--- !u!114 &1581474652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581474647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cbbd556085f382878df3252458b2f85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundLibrary
+  soundEffects: []
 --- !u!1 &1587714029
 GameObject:
   m_ObjectHideFlags: 0
@@ -3747,6 +3800,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2e478f8882c870faa8ecc5da996c2b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
+  audioMixer: {fileID: 24100000, guid: 56706822010337a68824fd2c27c75889, type: 2}
+  musicSlider: {fileID: 1020733837}
+  soundSlider: {fileID: 914032201}
 --- !u!1 &1749470078
 GameObject:
   m_ObjectHideFlags: 0
@@ -4199,7 +4255,7 @@ AudioSource:
   m_GameObject: {fileID: 1832626782}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 970724439607718656, guid: 56706822010337a68824fd2c27c75889, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
@@ -4465,7 +4521,7 @@ AudioSource:
   m_GameObject: {fileID: 1944014244}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -4206738733079725196, guid: 56706822010337a68824fd2c27c75889, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
