@@ -10,7 +10,7 @@ public class MangerBehaviour : MonoBehaviour
     public float delaytime;
     public GameObject lightningAnimation;
     //value of scene in build index CHANGE WHEN BUILDING GAME TO MAKE IT UP TO DATE
-    public int mainValue;
+    public int mainValue = 1;
     public bool journalOpen;
     public GameObject Paper;
     //text for what will be on notes

@@ -1,4 +1,5 @@
 // Reference https://www.youtube.com/watch?v=jEoobucfoL4&list=PLIvwrsXuTVRCMOtbhN-oRf8U8wba-Y0t7&index=5
+// Reference https://www.youtube.com/watch?v=g5WT91Sn3hg
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour
@@ -22,16 +23,8 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void PlaySound3D(AudioClip clip, Vector3 pos)
+    public static void PlaySound(string soundName)
     {
-        if (clip != null)
-        {
-            AudioSource.PlayClipAtPoint(clip, pos);
-        }
-    }
-
-    public void PlaySound3D(string soundName, Vector3 pos)
-    {
-        PlaySound3D(soundLibrary.GetClipFromName(soundName), pos);
+        instance.soundSource.PlayOneShot(instance.soundLibrary.GetClipFromName(soundName));
     }
 }
