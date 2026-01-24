@@ -64,12 +64,14 @@ public class PlayerBehaviour : MonoBehaviour
         //movement (using old input system)
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
         {
-            //transform.Translate(Vector3.forward * Time.deltaTime * speed);
+            transform.Translate(Vector3.forward * Time.deltaTime * speed);
+            
             if(!playingSound)StartCoroutine(PlayWalk());
         }
         if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
-            //transform.Translate(Vector3.back * Time.deltaTime * speed);
+            transform.Translate(Vector3.back * Time.deltaTime * speed);
+          
             if (!playingSound) StartCoroutine(PlayWalk());
         }
        
@@ -81,11 +83,12 @@ public class PlayerBehaviour : MonoBehaviour
             aSource.Stop();
         }
        //rotation (using old input system)
-        if (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.R))
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
-            //transform.Rotate(rotation * rotateSpeed * Time.deltaTime);
+           transform.Rotate(rotation * rotateSpeed * Time.deltaTime);
+           //rb.MoveRotation(rb.rotation);
         }
-        else if (Input.GetKey(KeyCode.X) || Input.GetKey(KeyCode.F))
+        else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             transform.Rotate(rotation * rotateSpeed * Time.deltaTime * -1);
         }
@@ -130,13 +133,7 @@ public class PlayerBehaviour : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        //new rb movement
-        //Store user input as a movement vector
-        Vector3 m_Input = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-
-        //Apply the movement vector to the current position, which is
-        //multiplied by deltaTime and speed for a smooth MovePosition
-        rb.MovePosition(transform.position + m_Input * Time.fixedDeltaTime * speed);
+      
     }
 
     //when hitting a trigger
