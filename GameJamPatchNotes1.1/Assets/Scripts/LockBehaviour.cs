@@ -58,7 +58,10 @@ public class LockBehaviour : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         showImage();
-        touchingPlayer = other.gameObject;
+        if (other.tag == "Player")
+        {
+            touchingPlayer = other.gameObject;
+        }
         
     }
 

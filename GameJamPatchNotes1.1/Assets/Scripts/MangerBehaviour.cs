@@ -9,6 +9,7 @@ public class MangerBehaviour : MonoBehaviour
     public TextMeshProUGUI timeText;
     public float delaytime;
     public GameObject lightningAnimation;
+    public bool timeStop;
     //value of scene in build index CHANGE WHEN BUILDING GAME TO MAKE IT UP TO DATE
     public int mainValue = 1;
     public bool journalOpen;
@@ -35,6 +36,7 @@ public class MangerBehaviour : MonoBehaviour
     {
         //made UI invisible
         journalOpen = false;
+        timeStop = false;
         pass1Text.gameObject.SetActive(false);
         pass2Text.gameObject.SetActive(false);
         pass3Text.gameObject.SetActive(false);
@@ -101,8 +103,8 @@ public class MangerBehaviour : MonoBehaviour
     void Update()
     {
         //loop s
-        if (Countdown > 0) Countdown -= Time.deltaTime;
-        else 
+        if (Countdown > 0 && !timeStop) Countdown -= Time.deltaTime;
+        if(Countdown <= 0)
         {
             Countdown = 0;
             StartCoroutine(NewLoop());
@@ -242,5 +244,10 @@ public class MangerBehaviour : MonoBehaviour
         PlayerPrefs.SetInt("Loop", PlayerPrefs.GetInt("Loop") + 1);
     }
 
+    public void FinalCutscene()
+    {
+        timeStop = true;
+        Debug.Log("FinalCutscene trigger");
+    }
    
 }
