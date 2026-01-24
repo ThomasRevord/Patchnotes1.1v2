@@ -81,11 +81,16 @@ public class PlayerBehaviour : MonoBehaviour
         {
             StopCoroutine(PlayWalk());
             aSource.Stop();
+            
+            rigid.linearVelocity = Vector3.zero;
+            
         }
-       //rotation (using old input system)
+ 
+        //rotation (using old input system)
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
            transform.Rotate(rotation * rotateSpeed * Time.deltaTime);
+
            //rb.MoveRotation(rb.rotation);
         }
         else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
@@ -177,9 +182,13 @@ public class PlayerBehaviour : MonoBehaviour
     IEnumerator PlayWalk()
     {
         playingSound = true;
-        Debug.Log("PlayWalk Called");
-        SoundManager.PlaySound("Walk");
+        //Debug.Log("PlayWalk Called");
+        aSource.PlayOneShot(walkSound);
         yield return new WaitForSeconds(walkDelayTime);
         playingSound = false;
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        rigid.linearVelocity = Vector3.zero;
     }
 }

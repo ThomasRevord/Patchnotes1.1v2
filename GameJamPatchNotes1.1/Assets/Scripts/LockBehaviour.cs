@@ -19,6 +19,7 @@ public class LockBehaviour : MonoBehaviour
     void Start()
     {
         keySet = false;
+        touchingPlayer = null;
     }
 
     // Update is called once per frame
@@ -57,7 +58,10 @@ public class LockBehaviour : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         showImage();
-        touchingPlayer = other.gameObject;
+        if (other.tag == "Player")
+        {
+            touchingPlayer = other.gameObject;
+        }
         
     }
 
