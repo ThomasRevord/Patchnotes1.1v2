@@ -81,6 +81,7 @@ public class PlayerBehaviour : MonoBehaviour
         {
             StopCoroutine(PlayWalk());
             aSource.Stop();
+            
             rigid.linearVelocity = Vector3.zero;
             
         }
@@ -181,8 +182,8 @@ public class PlayerBehaviour : MonoBehaviour
     IEnumerator PlayWalk()
     {
         playingSound = true;
-        Debug.Log("PlayWalk Called");
-        SoundManager.PlaySound("Walk");
+        //Debug.Log("PlayWalk Called");
+        aSource.PlayOneShot(walkSound);
         yield return new WaitForSeconds(walkDelayTime);
         playingSound = false;
     }

@@ -19,6 +19,7 @@ public class LockBehaviour : MonoBehaviour
     void Start()
     {
         keySet = false;
+        touchingPlayer = null;
     }
 
     // Update is called once per frame

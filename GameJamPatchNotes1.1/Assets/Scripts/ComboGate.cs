@@ -12,7 +12,7 @@ public class ComboGate : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        touchingPlayer = null;
     }
 
     // Update is called once per frame
@@ -36,7 +36,10 @@ public class ComboGate : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         showImage();
-        touchingPlayer = other.gameObject;
+        if (other.tag == "Player")
+        { 
+            touchingPlayer = other.gameObject;
+        }
     }
 
     private void OnTriggerExit(Collider other)
