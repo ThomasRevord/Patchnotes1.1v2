@@ -109,6 +109,9 @@ MonoBehaviour:
   itemName: 
   icon: {fileID: 0}
   interactable: {fileID: 0}
+  passItem: 0
+  delayTime: 0
+  getText: {fileID: 0}
 --- !u!54 &233624032553603354
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -135,7 +138,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &-255274446547145440
 BoxCollider:
   m_ObjectHideFlags: 0

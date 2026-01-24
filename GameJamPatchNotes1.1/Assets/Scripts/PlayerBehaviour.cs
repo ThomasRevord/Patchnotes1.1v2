@@ -17,6 +17,7 @@ public class PlayerBehaviour : MonoBehaviour
     public AudioClip walkSound;
     public float walkDelayTime;
     public bool playingSound;
+    public Rigidbody rb;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -64,13 +65,17 @@ public class PlayerBehaviour : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
         {
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
+            
             if(!playingSound)StartCoroutine(PlayWalk());
         }
         if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
             transform.Translate(Vector3.back * Time.deltaTime * speed);
+          
             if (!playingSound) StartCoroutine(PlayWalk());
         }
+       
+
         //disable coroutine when keys are lifted
         if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.S))
         {
@@ -80,7 +85,8 @@ public class PlayerBehaviour : MonoBehaviour
        //rotation (using old input system)
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
-            transform.Rotate(rotation * rotateSpeed * Time.deltaTime);
+           transform.Rotate(rotation * rotateSpeed * Time.deltaTime);
+           //rb.MoveRotation(rb.rotation);
         }
         else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
@@ -125,6 +131,11 @@ public class PlayerBehaviour : MonoBehaviour
         }
 
     }
+    private void FixedUpdate()
+    {
+      
+    }
+
     //when hitting a trigger
     private void OnTriggerEnter(Collider other)
     {
