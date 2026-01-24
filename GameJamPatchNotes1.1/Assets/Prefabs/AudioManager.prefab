@@ -338,7 +338,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cbbd556085f382878df3252458b2f85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundLibrary
-  soundEffects: []
+  soundEffects:
+  - name: Computer
+    clips:
+    - {fileID: 8300000, guid: 082a29a8c114e2e4987215abbb9d56cb, type: 3}
+  - name: Door
+    clips:
+    - {fileID: 8300000, guid: 90709cef1c9e1fd468bfca29c5737e32, type: 3}
+  - name: Paper
+    clips:
+    - {fileID: 8300000, guid: f03dab28e5c6c5a428f13d8341d75b49, type: 3}
+  - name: Walk
+    clips:
+    - {fileID: 8300000, guid: 25d18303ec109a34fa6906a48dcb4640, type: 3}
 --- !u!114 &3909477853054854696
 MonoBehaviour:
   m_ObjectHideFlags: 0
