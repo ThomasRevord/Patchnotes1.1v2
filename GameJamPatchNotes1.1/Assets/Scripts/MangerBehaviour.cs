@@ -29,6 +29,7 @@ public class MangerBehaviour : MonoBehaviour
     public int pass3Value;
     public GameObject tutorialText;
     public GameObject getText;
+    public float cutsceneLength;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -247,7 +248,18 @@ public class MangerBehaviour : MonoBehaviour
     public void FinalCutscene()
     {
         timeStop = true;
+        MusicManager.Instance.StopMusic();
+        SoundManager.PlaySound("FinalAudio");
         Debug.Log("FinalCutscene trigger");
+        StartCoroutine(finalLoop());
+    }
+
+    IEnumerator finalLoop()
+    {
+        yield return new WaitForSeconds(cutsceneLength);
+        lightningAnimation.SetActive(true);
+        yield return new WaitForSeconds(delaytime);
+        SceneManager.LoadScene(0);
     }
    
 }

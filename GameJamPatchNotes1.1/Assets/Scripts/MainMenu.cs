@@ -19,6 +19,7 @@ public class MainMenu : MonoBehaviour
     public void Play()
     {
         MusicManager.Instance.PlayMusic("Game");
+        PlayerPrefs.DeleteAll();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

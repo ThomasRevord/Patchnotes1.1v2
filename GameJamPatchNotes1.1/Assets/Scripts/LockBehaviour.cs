@@ -39,7 +39,7 @@ public class LockBehaviour : MonoBehaviour
                 keySet = true;
             }
             //if key is set
-            else 
+            else if (keySet)
             {
                 //increment current num
                 if (currentNum == 6)
