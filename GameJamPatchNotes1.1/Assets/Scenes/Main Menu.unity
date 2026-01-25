@@ -3974,6 +3974,7 @@ GameObject:
   - component: {fileID: 1699920907}
   - component: {fileID: 1699920906}
   - component: {fileID: 1699920910}
+  - component: {fileID: 1699920911}
   m_Layer: 5
   m_Name: MainCanvas
   m_TagString: Untagged
@@ -4083,6 +4084,18 @@ MonoBehaviour:
   audioMixer: {fileID: 24100000, guid: 56706822010337a68824fd2c27c75889, type: 2}
   musicSlider: {fileID: 1020733837}
   soundSlider: {fileID: 914032201}
+--- !u!114 &1699920911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699920905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33f7c16f0700734c187cee49d1ccd45d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MainMenuMusic
 --- !u!1 &1749470078
 GameObject:
   m_ObjectHideFlags: 0
