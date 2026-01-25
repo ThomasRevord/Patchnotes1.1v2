@@ -1624,7 +1624,9 @@ PrefabInstance:
       objectReference: {fileID: 1147673901}
     - target: {fileID: 6329886432420979186, guid: b45e74550a8a68942971ea91f6cd3adf, type: 3}
       propertyPath: noteText
-      value: R = my pass 3rd digit G + R = 6  B + G = 4
+      value: '"How do you open this thing again?" "IDK ask the guy who made it. he''s
+        the one who worked on the acid tanks. He''s a bit forgetful though so he
+        must have left a hint somewhere. The locks go from 1-6 btw"'
       objectReference: {fileID: 0}
     - target: {fileID: 6329886432420979186, guid: b45e74550a8a68942971ea91f6cd3adf, type: 3}
       propertyPath: interactable
@@ -1886,6 +1888,10 @@ PrefabInstance:
       propertyPath: 'soundEffects.Array.data[1].clips.Array.data[0]'
       value: 
       objectReference: {fileID: 8300000, guid: fd4972e5bd600874092e43b07832c621, type: 3}
+    - target: {fileID: 7630953007357992061, guid: 18a95af4391a3880fa427bc8e38ee519, type: 3}
+      propertyPath: 'soundEffects.Array.data[2].clips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: f26f298d5a58b174d9f5244a625ce9dc, type: 3}
     - target: {fileID: 7630953007357992061, guid: 18a95af4391a3880fa427bc8e38ee519, type: 3}
       propertyPath: 'soundEffects.Array.data[4].clips.Array.data[0]'
       value: 
@@ -2491,7 +2497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5188df3c48859014596092f9225e0a4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MangerBehaviour
-  Countdown: 120
+  Countdown: 180
   timeText: {fileID: 2140208250}
   delaytime: 0.6
   lightningAnimation: {fileID: 510842166}
@@ -6963,7 +6969,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: bf2c6e3ec3e66d342a781661b93c93e9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7493,7 +7499,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: bf2c6e3ec3e66d342a781661b93c93e9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8968,7 +8974,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: bf2c6e3ec3e66d342a781661b93c93e9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10790,7 +10796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bfa2fcfe9a30cc41b38cf86a0c042fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerBehaviour
-  speed: 2
+  speed: 2.5
   rigid: {fileID: 1659529667}
   rotation: {x: 0, y: -10, z: 0}
   rotateSpeed: 3
@@ -12078,11 +12084,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8298986601458008089, guid: 590870797fc844541a767f5d33cab554, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.34
       objectReference: {fileID: 0}
     - target: {fileID: 8298986601458008089, guid: 590870797fc844541a767f5d33cab554, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -24.508
+      value: -24.72
       objectReference: {fileID: 0}
     - target: {fileID: 8298986601458008089, guid: 590870797fc844541a767f5d33cab554, type: 3}
       propertyPath: m_LocalRotation.w
@@ -14531,6 +14537,7 @@ SceneRoots:
   - {fileID: 1659529665}
   - {fileID: 376353453}
   - {fileID: 1502782329}
+  - {fileID: 859688187}
   - {fileID: 2060314958}
   - {fileID: 2131006579}
   - {fileID: 680521495}
@@ -14553,7 +14560,6 @@ SceneRoots:
   - {fileID: 1777197025}
   - {fileID: 114895806}
   - {fileID: 295284628}
-  - {fileID: 859688187}
   - {fileID: 607535697}
   - {fileID: 120733486}
   - {fileID: 70880763}
