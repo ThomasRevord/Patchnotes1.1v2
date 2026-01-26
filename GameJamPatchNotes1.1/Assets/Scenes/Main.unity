@@ -4037,7 +4037,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 495528800300332866, guid: b45e74550a8a68942971ea91f6cd3adf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.01
+      value: -9.66
       objectReference: {fileID: 0}
     - target: {fileID: 495528800300332866, guid: b45e74550a8a68942971ea91f6cd3adf, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4045,7 +4045,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 495528800300332866, guid: b45e74550a8a68942971ea91f6cd3adf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -25.9
+      value: -33.26
       objectReference: {fileID: 0}
     - target: {fileID: 495528800300332866, guid: b45e74550a8a68942971ea91f6cd3adf, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4087,7 +4087,7 @@ PrefabInstance:
       propertyPath: noteText
       value: '"How do you open this thing again?" "IDK ask the guy who made it. he''s
         the one who worked on the acid tanks. He''s a bit forgetful though so he
-        must have left a hint somewhere. The locks go from 1-6 btw"'
+        must have left a hint somewhere. The locks go from 1-6 with 1 at top"'
       objectReference: {fileID: 0}
     - target: {fileID: 6329886432420979186, guid: b45e74550a8a68942971ea91f6cd3adf, type: 3}
       propertyPath: interactable
@@ -12260,7 +12260,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7964011560588998095, guid: 1b55e43f99d62bd4bbb12066055b161e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.03
+      value: -8.793
       objectReference: {fileID: 0}
     - target: {fileID: 7964011560588998095, guid: 1b55e43f99d62bd4bbb12066055b161e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -15650,7 +15650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8768928149003353429, guid: 53702e443a5e0d4478b159958b6a721b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.05
       objectReference: {fileID: 0}
     - target: {fileID: 8768928149003353429, guid: 53702e443a5e0d4478b159958b6a721b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -17791,7 +17791,7 @@ PrefabInstance:
     - target: {fileID: 6329886432420979186, guid: b45e74550a8a68942971ea91f6cd3adf, type: 3}
       propertyPath: noteText
       value: If you don't remember now, you will later. You always kept your notes
-        close by
+        close by. Third time's the charm after all
       objectReference: {fileID: 0}
     - target: {fileID: 6329886432420979186, guid: b45e74550a8a68942971ea91f6cd3adf, type: 3}
       propertyPath: interactable
@@ -21843,7 +21843,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Use arrow keys or WASD to move.
+  m_text: 'Use arrow keys or WASD to move. E to interact '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -31499,7 +31499,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8298986601458008089, guid: 590870797fc844541a767f5d33cab554, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -25.249998
+      value: -24.71
       objectReference: {fileID: 0}
     - target: {fileID: 8298986601458008089, guid: 590870797fc844541a767f5d33cab554, type: 3}
       propertyPath: m_LocalRotation.w
@@ -35612,7 +35612,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &2070785887
 SpriteRenderer:
   serializedVersion: 2

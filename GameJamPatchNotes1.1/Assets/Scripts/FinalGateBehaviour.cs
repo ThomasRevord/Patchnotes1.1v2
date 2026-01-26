@@ -20,7 +20,7 @@ public class FinalGateBehaviour : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && touchingPlayer && cutCalled == false)
         {
             CheckCode();
-            cutCalled = true;
+            
         }
     }
 
@@ -57,6 +57,7 @@ public class FinalGateBehaviour : MonoBehaviour
         if (PlayerPrefs.GetInt("Code1") == 1 && PlayerPrefs.GetInt("Code2") == 1 && PlayerPrefs.GetInt("Code3") == 1 && PlayerPrefs.GetInt("Code4") == 1)
         {
             interactable.SetActive(false);
+            cutCalled = true;
             manager.gameObject.GetComponent<MangerBehaviour>().FinalCutscene();
         }
     }

@@ -131,7 +131,7 @@ public class PlayerBehaviour : MonoBehaviour
         {
             foreach (string i in items)
             {
-                Debug.Log("item:" + i);
+               // Debug.Log("item:" + i);
             }
         }
 

@@ -183,6 +183,7 @@ public class MangerBehaviour : MonoBehaviour
         }
 
         //Debug code for testing player prefs DELETE THIS BEFORE GAME RELEASE
+        /*
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             
@@ -221,6 +222,7 @@ public class MangerBehaviour : MonoBehaviour
         {
             Debug.Log("Loop" + PlayerPrefs.GetInt("Loop"));
         }
+        */
 
 
     }

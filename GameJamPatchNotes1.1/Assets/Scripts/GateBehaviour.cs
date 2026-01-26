@@ -67,12 +67,13 @@ public class GateBehaviour : MonoBehaviour
     }
     public void DestroyGate()
     {
-        icon.SetActive(false);
+        //icon.SetActive(false);
         interactable.SetActive(false);
         
         if (!codeReward)
         {
             SoundManager.PlaySound("Door");
+            icon.SetActive(false);
             Destroy(gameObject);
             Debug.Log("Sound should play");
             
