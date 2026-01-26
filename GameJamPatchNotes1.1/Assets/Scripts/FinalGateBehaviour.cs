@@ -26,10 +26,12 @@ public class FinalGateBehaviour : MonoBehaviour
 
     public void showImage()
     {
+        Debug.Log("Show image called");
         if(!cutCalled) interactable.SetActive(true);
     }
     public void hideImage()
     {
+        Debug.Log("Hide image called");
         interactable.SetActive(false);
     }
 

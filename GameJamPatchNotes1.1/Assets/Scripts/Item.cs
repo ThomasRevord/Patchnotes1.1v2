@@ -33,21 +33,29 @@ public class Item : MonoBehaviour
     //methods to show wheter or not Item is interactable
     public void showImage()
     {
+        Debug.Log("Show image called");
         interactable.SetActive(true);
     }
     public void hideImage()
     {
+        Debug.Log("Hide image called");
         interactable.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        showImage();
+        if (other.tag == "Player")
+        {
+            showImage();
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        hideImage();
+        if (other.tag == "Player")
+        { 
+            hideImage();
+        }
     }
 
     public void DestroyItem()
