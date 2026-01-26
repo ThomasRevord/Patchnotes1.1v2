@@ -190,5 +190,6 @@ public class PlayerBehaviour : MonoBehaviour
     private void OnCollisionExit(Collision collision)
     {
         rigid.linearVelocity = Vector3.zero;
+        Debug.Log("Hit");
     }
 }
