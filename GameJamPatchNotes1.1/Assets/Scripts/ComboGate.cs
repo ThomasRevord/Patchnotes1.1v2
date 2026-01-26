@@ -37,17 +37,21 @@ public class ComboGate : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        showImage();
+        
         if (other.tag == "Player")
-        { 
+        {
+            showImage();
             touchingPlayer = other.gameObject;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        hideImage();
-        touchingPlayer = null;
+        if (other.tag == "Player")
+        {
+            hideImage();
+            touchingPlayer = null;
+        }
         
     }
 
