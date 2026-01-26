@@ -30,10 +30,12 @@ public class NoteBehaviour : MonoBehaviour
     //methods to show wheter or not Item is interactable
     public void showImage()
     {
+        Debug.Log("Show image called");
         interactable.SetActive(true);
     }
     public void hideImage()
     {
+        Debug.Log("Hide image called");
         interactable.SetActive(false);
     }
 

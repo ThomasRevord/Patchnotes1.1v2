@@ -26,26 +26,32 @@ public class ComboGate : MonoBehaviour
 
     public void showImage()
     {
+        Debug.Log("Show image called");
         interactable.SetActive(true);
     }
     public void hideImage()
     {
+        Debug.Log("Hide image called");
         interactable.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        showImage();
+        
         if (other.tag == "Player")
-        { 
+        {
+            showImage();
             touchingPlayer = other.gameObject;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        hideImage();
-        touchingPlayer = null;
+        if (other.tag == "Player")
+        {
+            hideImage();
+            touchingPlayer = null;
+        }
         
     }
 
